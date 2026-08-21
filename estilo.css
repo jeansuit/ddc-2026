@@ -1,0 +1,1438 @@
+/* =====================================================
+   ESTILO GENERAL
+   Portafolio personal
+===================================================== */
+
+
+/* =====================================================
+   COLORES
+===================================================== */
+
+:root {
+
+    --crema: #faf7f3;
+    --crema-oscura: #f1e7e5;
+
+    --rosa: #ead2d5;
+    --rosa-oscuro: #c98f9a;
+
+    --lila: #ded8eb;
+    --celeste: #d9e6e3;
+
+    --texto: #363235;
+    --gris: #777174;
+
+    --blanco: #ffffff;
+
+    --borde: #e8e1dc;
+
+}
+
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--crema);
+
+    color: var(--texto);
+
+    font-family: "DM Sans", sans-serif;
+
+    line-height: 1.6;
+
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-weight: 400;
+
+}
+
+
+em {
+
+    color: var(--rosa-oscuro);
+
+    font-style: italic;
+
+}
+
+
+/* =====================================================
+   MENÚ DE NAVEGACIÓN
+===================================================== */
+
+header {
+
+    width: 100%;
+
+    padding: 25px 8%;
+
+    background: var(--crema);
+
+}
+
+
+nav {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.logo {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.logo span {
+
+    color: var(--rosa-oscuro);
+
+}
+
+
+nav ul {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+    list-style: none;
+
+}
+
+
+nav ul li a {
+
+    position: relative;
+
+    font-size: 14px;
+
+    color: var(--texto);
+
+    transition: .3s;
+
+}
+
+
+nav ul li a:hover {
+
+    color: var(--rosa-oscuro);
+
+}
+
+
+nav ul li a.activo {
+
+    color: var(--rosa-oscuro);
+
+}
+
+
+/* Línea debajo de la página activa */
+
+nav ul li a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--rosa-oscuro);
+
+    transition: .3s;
+
+}
+
+
+nav ul li a:hover::after,
+nav ul li a.activo::after {
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   ELEMENTOS GENERALES
+===================================================== */
+
+.etiqueta {
+
+    margin-bottom: 15px;
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+.boton {
+
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border: 1px solid var(--texto);
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    transition: .3s;
+
+}
+
+
+.boton:hover {
+
+    background: var(--texto);
+
+    color: var(--blanco);
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =====================================================
+   PÁGINA DE INICIO
+===================================================== */
+
+.inicio {
+
+    min-height: 650px;
+
+    padding: 80px 10%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+}
+
+
+/* Texto principal */
+
+.inicio h1 {
+
+    margin-bottom: 30px;
+
+    font-size: clamp(55px, 7vw, 80px);
+
+    line-height: 1;
+
+}
+
+
+.inicio h1 em {
+
+    display: block;
+
+}
+
+
+.descripcion {
+
+    max-width: 500px;
+
+    margin-bottom: 30px;
+
+    color: var(--gris);
+
+}
+
+
+/* =====================================================
+   IMAGEN PRINCIPAL DEL INICIO
+===================================================== */
+
+.imagen-principal {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.forma {
+
+    width: 330px;
+
+    height: 430px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 170px 170px 25px 25px;
+
+    background: var(--rosa);
+
+    color: var(--gris);
+
+    transition: .4s;
+
+}
+
+
+.forma:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+/* =====================================================
+   SECCIÓN BIENVENIDA
+===================================================== */
+
+.bienvenida {
+
+    padding: 120px 15%;
+
+    text-align: center;
+
+    background: var(--crema-oscura);
+
+}
+
+
+.bienvenida h2 {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    font-size: clamp(40px, 5vw, 55px);
+
+    line-height: 1.1;
+
+}
+
+
+.bienvenida p:not(.etiqueta) {
+
+    max-width: 550px;
+
+    margin: 25px auto 35px;
+
+    color: var(--gris);
+
+}
+
+
+/* =====================================================
+   TARJETAS DE INICIO
+===================================================== */
+
+.tarjetas {
+
+    padding: 120px 10%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.tarjeta {
+
+    min-height: 260px;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    transition: .3s;
+
+}
+
+
+.tarjeta:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+.tarjeta.rosa {
+
+    background: var(--rosa);
+
+}
+
+
+.tarjeta.lila {
+
+    background: var(--lila);
+
+}
+
+
+.tarjeta.celeste {
+
+    background: var(--celeste);
+
+}
+
+
+.tarjeta span {
+
+    font-size: 12px;
+
+    color: var(--gris);
+
+}
+
+
+.tarjeta h3 {
+
+    margin-top: 65px;
+
+    margin-bottom: 15px;
+
+    font-size: 28px;
+
+}
+
+
+.tarjeta p {
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   PÁGINAS INTERIORES
+   INFO / CONTACTO
+===================================================== */
+
+.pagina {
+
+    padding: 100px 10% 120px;
+
+}
+
+
+/* =====================================================
+   TÍTULO DE PÁGINAS
+===================================================== */
+
+.titulo {
+
+    max-width: 800px;
+
+    margin-bottom: 110px;
+
+}
+
+
+.titulo h1 {
+
+    margin-bottom: 30px;
+
+    font-size: clamp(55px, 7vw, 80px);
+
+    line-height: 1;
+
+}
+
+
+.titulo p:last-child {
+
+    max-width: 600px;
+
+    color: var(--gris);
+
+}
+
+
+/* =====================================================
+   SECCIÓN SOBRE MI FORMACIÓN
+===================================================== */
+
+.contenido {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+    margin-bottom: 140px;
+
+}
+
+
+/* Imagen */
+
+.foto {
+
+    height: 500px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: 250px 250px 25px 25px;
+
+    background: var(--lila);
+
+    color: var(--gris);
+
+}
+
+
+.foto img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+/* Texto */
+
+.texto-info h2 {
+
+    margin-bottom: 25px;
+
+    font-size: 50px;
+
+    line-height: 1.1;
+
+}
+
+
+.texto-info p:not(.etiqueta) {
+
+    margin-bottom: 20px;
+
+    color: var(--gris);
+
+}
+
+
+/* =====================================================
+   TALLERES / DATOS
+===================================================== */
+
+.datos {
+
+    margin-bottom: 140px;
+
+}
+
+
+.datos h2 {
+
+    margin-bottom: 50px;
+
+    font-size: 50px;
+
+    line-height: 1.1;
+
+}
+
+
+.datos-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.datos-grid div {
+
+    min-height: 150px;
+
+    padding: 25px 10px;
+
+    border-top: 1px solid var(--borde);
+
+    transition: .3s;
+
+}
+
+
+.datos-grid div:hover {
+
+    padding-left: 18px;
+
+    background: var(--crema-oscura);
+
+}
+
+
+.datos-grid span {
+
+    color: var(--rosa-oscuro);
+
+    font-size: 12px;
+
+}
+
+
+.datos-grid h3 {
+
+    margin: 15px 0 5px;
+
+    font-size: 24px;
+
+}
+
+
+.datos-grid p {
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   PROYECTOS
+===================================================== */
+
+.proyectos {
+
+    margin-bottom: 140px;
+
+}
+
+
+.proyectos h2 {
+
+    margin-bottom: 50px;
+
+    font-size: 50px;
+
+    line-height: 1.1;
+
+}
+
+
+.proyectos-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* Tarjeta de proyecto */
+
+.proyecto {
+
+    overflow: hidden;
+
+    background: var(--blanco);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 25px;
+
+    transition: .4s;
+
+}
+
+
+.proyecto:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(70, 60, 60, .08);
+
+}
+
+
+/* Imagen */
+
+.proyecto-imagen {
+
+    width: 100%;
+
+    height: 260px;
+
+    overflow: hidden;
+
+    background: var(--lila);
+
+}
+
+
+.proyecto-imagen img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+
+}
+
+
+.proyecto:hover .proyecto-imagen img {
+
+    transform: scale(1.05);
+
+}
+
+
+/* Información */
+
+.proyecto-texto {
+
+    padding: 30px;
+
+}
+
+
+.proyecto-texto span {
+
+    color: var(--gris);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.proyecto-texto h3 {
+
+    margin: 15px 0;
+
+    font-size: 27px;
+
+    line-height: 1.1;
+
+}
+
+
+.proyecto-texto p {
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   ÁREAS DE INTERÉS
+===================================================== */
+
+.intereses {
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 80px;
+
+    margin-bottom: 140px;
+
+}
+
+
+.intereses h2 {
+
+    font-size: 50px;
+
+    line-height: 1.1;
+
+}
+
+
+.intereses-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+.intereses-grid article {
+
+    padding: 30px;
+
+    background: var(--blanco);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 20px;
+
+    transition: .3s;
+
+}
+
+
+.intereses-grid article:hover {
+
+    background: var(--lila);
+
+    transform: translateY(-5px);
+
+}
+
+
+.intereses-grid span {
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+}
+
+
+.intereses-grid h3 {
+
+    margin: 20px 0 10px;
+
+    font-size: 25px;
+
+}
+
+
+.intereses-grid p {
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   HABILIDADES
+===================================================== */
+
+.habilidades {
+
+    margin-bottom: 60px;
+
+}
+
+
+.habilidades h2 {
+
+    margin-bottom: 50px;
+
+    font-size: 50px;
+
+    line-height: 1.1;
+
+}
+
+
+.habilidades-lista {
+
+    border-top: 1px solid var(--borde);
+
+}
+
+
+.habilidades-lista div {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 22px 10px;
+
+    border-bottom: 1px solid var(--borde);
+
+    transition: .3s;
+
+}
+
+
+.habilidades-lista div:hover {
+
+    padding-left: 25px;
+
+    background: var(--rosa);
+
+}
+
+
+.habilidades-lista strong {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+}
+
+
+.habilidades-lista span {
+
+    color: var(--gris);
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   CONTACTO
+===================================================== */
+
+.contacto {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+}
+
+
+.datos-contacto h2 {
+
+    margin-bottom: 50px;
+
+    font-size: 50px;
+
+    line-height: 1.1;
+
+}
+
+
+.contacto-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.contacto-item > span {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--lila);
+
+    font-size: 20px;
+
+}
+
+
+.contacto-item small {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--gris);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.contacto-item p {
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================================
+   MENSAJE DE CONTACTO
+===================================================== */
+
+.mensaje {
+
+    padding: 70px 50px;
+
+    text-align: center;
+
+    background: var(--rosa);
+
+    border-radius: 250px 250px 25px 25px;
+
+}
+
+
+.flor {
+
+    margin-bottom: 20px;
+
+    font-size: 40px;
+
+}
+
+
+.mensaje h2 {
+
+    margin-bottom: 20px;
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+}
+
+
+.mensaje p {
+
+    margin-bottom: 30px;
+
+    color: var(--gris);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding: 35px 8%;
+
+    border-top: 1px solid var(--borde);
+
+    color: var(--gris);
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+
+    .inicio {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 50px;
+
+    }
+
+
+    .descripcion {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .imagen-principal {
+
+        margin-top: 20px;
+
+    }
+
+
+    .contenido {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+    }
+
+
+    .intereses {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .contacto {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+    }
+
+
+    .tarjetas {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .proyectos-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .datos-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+
+    /* Menú */
+
+    header {
+
+        padding: 20px;
+
+    }
+
+
+    nav {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+
+    nav ul {
+
+        gap: 18px;
+
+    }
+
+
+    nav ul li a {
+
+        font-size: 13px;
+
+    }
+
+
+    /* Inicio */
+
+    .inicio {
+
+        padding: 70px 7%;
+
+    }
+
+
+    .inicio h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    .forma {
+
+        width: 260px;
+
+        height: 350px;
+
+    }
+
+
+    /* Bienvenida */
+
+    .bienvenida {
+
+        padding: 90px 8%;
+
+    }
+
+
+    .bienvenida h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    /* Tarjetas */
+
+    .tarjetas {
+
+        padding: 90px 7%;
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* Páginas */
+
+    .pagina {
+
+        padding: 80px 7%;
+
+    }
+
+
+    .titulo {
+
+        margin-bottom: 70px;
+
+    }
+
+
+    .titulo h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    /* Formación */
+
+    .foto {
+
+        height: 400px;
+
+    }
+
+
+    .texto-info h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    /* Talleres */
+
+    .datos h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .datos-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* Proyectos */
+
+    .proyectos h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .proyectos-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .proyecto-imagen {
+
+        height: 230px;
+
+    }
+
+
+    /* Intereses */
+
+    .intereses h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .intereses-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* Habilidades */
+
+    .habilidades h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .habilidades-lista strong {
+
+        font-size: 17px;
+
+    }
+
+
+    /* Contacto */
+
+    .datos-contacto h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .mensaje {
+
+        padding: 60px 30px;
+
+    }
+
+
+    .mensaje h2 {
+
+        font-size: 35px;
+
+    }
+
+
+}
