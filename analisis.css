@@ -1,0 +1,793 @@
+/* =====================================================
+   ANÁLISIS WEB
+===================================================== */
+
+
+/* =====================================================
+   FUENTES
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+
+/* =====================================================
+   COLORES
+===================================================== */
+
+:root {
+
+    --crema: #faf7f3;
+
+    --crema-oscura: #f1e7e5;
+
+    --rosa: #ead2d5;
+
+    --rosa-oscuro: #c98f9a;
+
+    --lila: #ded8eb;
+
+    --celeste: #d9e6e3;
+
+    --texto: #363235;
+
+    --gris: #777174;
+
+    --blanco: #ffffff;
+
+    --borde: #e8e1dc;
+
+}
+
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--crema);
+
+    color: var(--texto);
+
+    font-family: "DM Sans", sans-serif;
+
+    line-height: 1.6;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-weight: 400;
+
+}
+
+
+em {
+
+    color: var(--rosa-oscuro);
+
+    font-style: italic;
+
+}
+
+
+/* =====================================================
+   NAVEGACIÓN
+===================================================== */
+
+header {
+
+    width: 100%;
+
+    padding: 25px 8%;
+
+    background: var(--crema);
+
+    border-bottom: 1px solid var(--borde);
+
+}
+
+
+nav {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.logo {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.logo span {
+
+    color: var(--rosa-oscuro);
+
+}
+
+
+nav ul {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    list-style: none;
+
+}
+
+
+nav ul li a {
+
+    position: relative;
+
+    font-size: 14px;
+
+    transition: .3s;
+
+}
+
+
+nav ul li a:hover,
+nav ul li a.activo {
+
+    color: var(--rosa-oscuro);
+
+}
+
+
+nav ul li a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--rosa-oscuro);
+
+    transition: .3s;
+
+}
+
+
+nav ul li a:hover::after,
+nav ul li a.activo::after {
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   ETIQUETAS
+===================================================== */
+
+.etiqueta {
+
+    margin-bottom: 15px;
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =====================================================
+   PORTADA
+===================================================== */
+
+.hero {
+
+    min-height: 650px;
+
+    padding: 100px 10%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: var(--crema-oscura);
+
+}
+
+
+.hero h1 {
+
+    max-width: 900px;
+
+    font-size: clamp(65px, 9vw, 110px);
+
+    line-height: .9;
+
+}
+
+
+.hero h1 em {
+
+    display: block;
+
+}
+
+
+.intro {
+
+    max-width: 650px;
+
+    margin-top: 40px;
+
+    color: var(--gris);
+
+    font-size: 17px;
+
+}
+
+
+/* =====================================================
+   INTRODUCCIÓN
+===================================================== */
+
+.introduccion {
+
+    padding: 120px 10%;
+
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 70px;
+
+}
+
+
+.introduccion h2 {
+
+    max-width: 750px;
+
+    margin-bottom: 30px;
+
+    font-size: clamp(45px, 6vw, 70px);
+
+    line-height: 1;
+
+}
+
+
+.introduccion p:not(.etiqueta) {
+
+    max-width: 650px;
+
+    color: var(--gris);
+
+}
+
+
+/* =====================================================
+   SECCIÓN DE CADA SITIO
+===================================================== */
+
+.analisis-seccion {
+
+    padding: 100px 10% 130px;
+
+}
+
+
+.analisis-seccion:nth-of-type(odd) {
+
+    background: #f6f0ee;
+
+}
+
+
+.analisis-seccion.youtube {
+
+    background: var(--crema);
+
+}
+
+
+/* =====================================================
+   TÍTULO DEL SITIO
+===================================================== */
+
+.sitio-titulo {
+
+    margin-bottom: 100px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 50px;
+
+}
+
+
+.sitio-titulo h2 {
+
+    max-width: 900px;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1;
+
+}
+
+
+.sitio-titulo h2 em {
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   BOTÓN
+===================================================== */
+
+.boton {
+
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border: 1px solid var(--texto);
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    transition: .3s;
+
+}
+
+
+.boton:hover {
+
+    background: var(--texto);
+
+    color: var(--blanco);
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.contenido-web {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+/* =====================================================
+   CADA ANÁLISIS
+===================================================== */
+
+.analysis-item {
+
+    margin-bottom: 120px;
+
+    display: grid;
+
+    grid-template-columns: 70px 1fr;
+
+    gap: 35px;
+
+}
+
+
+.numero-seccion {
+
+    padding-top: 5px;
+
+    color: var(--rosa-oscuro);
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+}
+
+
+.analysis-texto {
+
+    max-width: 800px;
+
+}
+
+
+.analysis-texto h3 {
+
+    margin-bottom: 25px;
+
+    font-size: 34px;
+
+    line-height: 1.15;
+
+}
+
+
+.analysis-texto p:not(.etiqueta) {
+
+    margin-bottom: 35px;
+
+    color: var(--gris);
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================================
+   IMÁGENES
+===================================================== */
+
+.analysis-image {
+
+    grid-column: 2;
+
+    margin-top: 10px;
+
+    padding: 25px;
+
+    background: var(--blanco);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 25px;
+
+}
+
+
+.analysis-image img {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    height: auto;
+
+    display: block;
+
+    margin: auto;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+}
+
+
+.caption {
+
+    margin-top: 15px;
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   EVALUACIÓN
+===================================================== */
+
+.evaluation {
+
+    margin-left: 105px;
+
+    padding: 45px;
+
+    background: var(--rosa);
+
+    border-radius: 25px;
+
+}
+
+
+.youtube .evaluation {
+
+    background: var(--lila);
+
+}
+
+
+.evaluation h3 {
+
+    margin-bottom: 25px;
+
+    font-size: 32px;
+
+}
+
+
+.evaluation p:not(.etiqueta) {
+
+    max-width: 800px;
+
+    margin-bottom: 18px;
+
+    color: var(--gris);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+
+    nav ul {
+
+        gap: 18px;
+
+    }
+
+
+    nav ul li a {
+
+        font-size: 12px;
+
+    }
+
+
+    .introduccion {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .sitio-titulo {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .analysis-item {
+
+        grid-template-columns: 50px 1fr;
+
+    }
+
+
+    .evaluation {
+
+        margin-left: 85px;
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+
+    header {
+
+        padding: 20px;
+
+    }
+
+
+    nav {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+
+    nav ul {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+
+    }
+
+
+    nav ul li a {
+
+        font-size: 12px;
+
+    }
+
+
+    .hero {
+
+        min-height: 550px;
+
+        padding: 80px 7%;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 58px;
+
+    }
+
+
+    .intro {
+
+        font-size: 15px;
+
+    }
+
+
+    .introduccion {
+
+        padding: 80px 7%;
+
+    }
+
+
+    .introduccion h2 {
+
+        font-size: 45px;
+
+    }
+
+
+    .analisis-seccion {
+
+        padding: 80px 7%;
+
+    }
+
+
+    .sitio-titulo {
+
+        margin-bottom: 70px;
+
+    }
+
+
+    .sitio-titulo h2 {
+
+        font-size: 48px;
+
+    }
+
+
+    .analysis-item {
+
+        display: block;
+
+        margin-bottom: 90px;
+
+    }
+
+
+    .numero-seccion {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .analysis-texto h3 {
+
+        font-size: 28px;
+
+    }
+
+
+    .analysis-image {
+
+        margin-top: 30px;
+
+        padding: 12px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .evaluation {
+
+        margin-left: 0;
+
+        padding: 30px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .evaluation h3 {
+
+        font-size: 28px;
+
+    }
+
+}
