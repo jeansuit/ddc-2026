@@ -6,361 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Encargo 3 — Análisis Web</title>
+    <title>Análisis Web | Portafolio</title>
 
-    <style>
-
-        /* =========================
-           CONFIGURACIÓN GENERAL
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f2ee;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-        }
-
-
-        /* =========================
-           NAVEGACIÓN
-        ========================= */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 20px 6%;
-
-            background: #171717;
-            color: white;
-        }
-
-        .logo {
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 13px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-
-        /* =========================
-           PORTADA
-        ========================= */
-
-        .hero {
-            min-height: 75vh;
-
-            padding: 100px 8%;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            background: #e8e3dc;
-        }
-
-        .numero {
-            margin-bottom: 25px;
-
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-
-            color: #666;
-        }
-
-        h1 {
-            max-width: 1000px;
-
-            font-size: clamp(50px, 9vw, 115px);
-            line-height: .9;
-            letter-spacing: -6px;
-        }
-
-        .intro {
-            max-width: 650px;
-            margin-top: 35px;
-
-            font-size: 18px;
-            color: #555;
-        }
-
-
-        /* =========================
-           SECCIONES
-        ========================= */
-
-        section {
-            padding: 100px 8%;
-        }
-
-        .section-intro {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 50px;
-
-            margin-bottom: 70px;
-        }
-
-        .section-number {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-
-            color: #777;
-        }
-
-        h2 {
-            font-size: clamp(40px, 6vw, 75px);
-            line-height: .95;
-            letter-spacing: -3px;
-        }
-
-        h3 {
-            font-size: 28px;
-        }
-
-        h4 {
-            margin-bottom: 15px;
-            font-size: 19px;
-        }
-
-
-        /* =========================
-           TARJETAS
-        ========================= */
-
-        .web-card {
-            margin-bottom: 100px;
-
-            background: white;
-            border: 1px solid #ddd;
-        }
-
-        .web-header {
-            padding: 35px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 25px;
-
-            border-bottom: 1px solid #ddd;
-        }
-
-        .web-header h3 {
-            margin: 0;
-        }
-
-        .visit {
-            padding: 10px 18px;
-
-            border: 1px solid #222;
-
-            text-decoration: none;
-            font-size: 12px;
-
-            white-space: nowrap;
-        }
-
-        .visit:hover {
-            background: #222;
-            color: white;
-        }
-
-        .web-content {
-            padding: 40px;
-        }
-
-
-        /* =========================
-           CADA ANÁLISIS
-        ========================= */
-
-        .analysis-item {
-            margin-bottom: 75px;
-
-            padding-top: 20px;
-
-            border-top: 2px solid #222;
-        }
-
-        .analysis-item p {
-            max-width: 750px;
-
-            margin-bottom: 30px;
-
-            color: #555;
-        }
-
-
-        /* =========================
-           IMÁGENES
-        ========================= */
-
-        .analysis-image {
-            width: 100%;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            margin-top: 25px;
-        }
-
-        .analysis-image img {
-            width: 100%;
-            max-width: 1000px;
-            height: auto;
-
-            display: block;
-
-            margin: 0 auto;
-
-            padding: 10px;
-
-            object-fit: contain;
-        }
-
-        .caption {
-            width: 100%;
-            max-width: 1000px;
-
-            padding: 5px 10px 0;
-
-            font-size: 12px;
-            color: #777;
-            text-align: center;
-        }
-
-
-        /* =========================
-           EVALUACIÓN
-        ========================= */
-
-        .evaluation {
-            margin-top: 30px;
-
-            padding: 35px;
-
-            background: #eeece7;
-
-            border-left: 5px solid #222;
-        }
-
-        .evaluation-title {
-            margin-bottom: 12px;
-
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .evaluation p {
-            max-width: 800px;
-            color: #555;
-        }
-
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            header {
-                padding: 18px 5%;
-            }
-
-            nav {
-                gap: 12px;
-            }
-
-            nav a {
-                font-size: 11px;
-            }
-
-            .hero {
-                padding: 80px 6%;
-            }
-
-            h1 {
-                letter-spacing: -4px;
-            }
-
-            section {
-                padding: 70px 6%;
-            }
-
-            .section-intro {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .web-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .web-content {
-                padding: 25px;
-            }
-
-            .analysis-item {
-                margin-bottom: 55px;
-            }
-
-            .analysis-image img {
-                padding: 5px;
-            }
-
-            .comparison {
-                overflow-x: auto;
-            }
-
-            table {
-                min-width: 650px;
-            }
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="analisis.css">
 
 </head>
 
@@ -374,48 +22,61 @@
 
     <header>
 
-    <nav>
+        <nav>
 
-        <ul class="menu">
+            <a href="index.html" class="logo">
+                Encargos<span>.</span>
+            </a>
 
-            <li>
-                <a href="index.html">
-                    Inicio
-                </a>
-            </li>
+            <ul>
 
-            <li>
-                <a href="info.html">
-                    Sobre mí
-                </a>
-            </li>
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
 
-            <li>
-                <a href="contacto.html" class="activo">
-                    Contacto
-                </a>
-            </li>
+                <li>
+                    <a href="info.html">
+                        Sobre mí
+                    </a>
+                </li>
 
-        </ul>
+                <li>
+                    <a href="analisis.html" class="activo">
+                        Análisis web
+                    </a>
+                </li>
 
-    </nav>
+                <li>
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+                </li>
 
-</header>
+            </ul>
+
+        </nav>
+
+    </header>
+
 
 
     <!-- =========================
          PORTADA
     ========================== -->
 
-    <main id="inicio">
+    <main>
 
         <section class="hero">
 
+            <p class="etiqueta">
+                ENCARGO 03
+            </p>
 
             <h1>
-                Análisis<br>
-              Sitio y plataforma<br>
-                web
+                Análisis
+                <em>web</em>
             </h1>
 
             <p class="intro">
@@ -435,87 +96,145 @@
              INTRODUCCIÓN
         ========================== -->
 
-        <section>
-
-           
-         
-
-            <!-- ==================================================
-                 MMDH
-            =================================================== -->
-
-            <article class="web-card" id="mmdh">
+        <section class="introduccion">
 
 
-                <div class="web-header">
+            <div>
 
-                    <h3>
-                        01 / Museo de la Memoria y los Derechos Humanos
-                    </h3>
+                <h2>
+                    Preguntas
+                    <em>guía</em>
+                </h2>
 
-                    <a
-                        class="visit"
-                        href="https://mmdh.cl/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        VISITAR SITIO ↗
-                    </a>
+                <p>
+                    ¿Qué partes de la pantalla se mueven y cuáles quedan
+                  fijas al hacer scroll?                
+                  </p>          
+              <p>
+                  ¿Cómo se distribuyen las columnas, usando las herramientas
+                  de desarrollador del navegador?
+                  </p>
+              <p>
+                  ¿Cómo reacciona ese layout cuando la pantalla se reduce al
+                  tamaño móvil?
+                </p>
+               <p>   
+                  ¿Les parecen apropiadas las decisiones tomadas? ¿Harían
+                  algún ajuste?
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             MMDH
+        =================================================== -->
+
+        <section class="analisis-seccion" id="mmdh">
+
+
+            <div class="sitio-titulo">
+
+                <div>
+
+                    <p class="etiqueta">
+                        01 / SITIO WEB
+                    </p>
+
+                    <h2>
+                        Museo de la Memoria
+                        <em>y los Derechos Humanos.</em>
+                    </h2>
 
                 </div>
 
 
-                <div class="web-content">
+                <a
+                    class="boton"
+                    href="https://mmdh.cl/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Visitar sitio ↗
+                </a>
+
+            </div>
 
 
 
-                    <!-- =========================
-                         SCROLL
-                    ========================== -->
+            <div class="contenido-web">
 
-                    <div class="analysis-item">
 
-                        <h4>
-                            ¿Qué partes de la pantalla se mueven y cuáles quedan fijas al hacer scroll?
-                        </h4>
+                <!-- SCROLL -->
+
+                <article class="analysis-item">
+
+                    <div class="numero-seccion">
+                        01
+                    </div>
+
+                    <div class="analysis-texto">
+
+                        <p class="etiqueta">
+                            SCROLL
+                        </p>
+
+                        <h3>
+                            ¿Qué partes de la pantalla se mueven
+                            y cuáles quedan fijas?
+                        </h3>
 
                         <p>
 
                             Al realizar scroll, el contenido principal
                             de la página se desplaza verticalmente,
                             permitiendo recorrer las diferentes secciones
-                            del sitio. El Header de la página y el menú de accesibilidad es lo único que queda fija.
+                            del sitio. El Header de la página y el menú
+                            de accesibilidad es lo único que queda fijo.
 
                         </p>
-
-
-                        <div class="analysis-image">
-
-                            <img
-                                src="imagenes/imagn.png"
-                                alt="MMDH comportamiento durante el scroll"
-                                style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; object-fit: contain;"
-                            >
-
-                            <div class="caption">
-                                MMDH — comportamiento de la interfaz durante el scroll.
-                            </div>
-
-                        </div>
 
                     </div>
 
 
+                    <div class="analysis-image">
 
-                    <!-- =========================
-                         COLUMNAS
-                    ========================== -->
+                        <img
+                            src="imagenes/imagn.png"
+                            alt="MMDH comportamiento durante el scroll"
+                        >
 
-                    <div class="analysis-item">
+                        <p class="caption">
+                            MMDH — comportamiento de la interfaz durante el scroll.
+                        </p>
 
-                        <h4>
-                            ¿Cómo se distribuyen las columnas?
-                        </h4>
+                    </div>
+
+                </article>
+
+
+
+                <!-- COLUMNAS -->
+
+                <article class="analysis-item">
+
+                    <div class="numero-seccion">
+                        02
+                    </div>
+
+                    <div class="analysis-texto">
+
+                        <p class="etiqueta">
+                            ESTRUCTURA
+                        </p>
+
+                        <h3>
+                            ¿Cómo se distribuyen
+                            las columnas?
+                        </h3>
 
                         <p>
 
@@ -523,38 +242,48 @@
                             se utilizaron las herramientas de desarrollador
                             del navegador. Se observa cómo se organizan
                             los diferentes contenedores y elementos del
-                            sitio jugando también con la distribución de imagenes.
+                            sitio, jugando también con la distribución
+                            de imágenes.
 
                         </p>
-
-
-                        <div class="analysis-image">
-
-                            <img
-                                src="imagenes/imagn2.png"
-                                alt="MMDH análisis de columnas en DevTools"
-                                style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; object-fit: contain;"
-                            >
-
-                            <div class="caption">
-                                MMDH — análisis de estructura.
-                            </div>
-
-                        </div>
 
                     </div>
 
 
+                    <div class="analysis-image">
 
-                    <!-- =========================
-                         ESCRITORIO
-                    ========================== -->
+                        <img
+                            src="imagenes/imagn2.png"
+                            alt="MMDH análisis de columnas en DevTools"
+                        >
 
-                    <div class="analysis-item">
+                        <p class="caption">
+                            MMDH — análisis de estructura.
+                        </p>
 
-                        <h4>
-                            Vista en escritorio
-                        </h4>
+                    </div>
+
+                </article>
+
+
+
+                <!-- ESCRITORIO -->
+
+                <article class="analysis-item">
+
+                    <div class="numero-seccion">
+                        03
+                    </div>
+
+                    <div class="analysis-texto">
+
+                        <p class="etiqueta">
+                            ESCRITORIO
+                        </p>
+
+                        <h3>
+                            Vista en escritorio.
+                        </h3>
 
                         <p>
 
@@ -565,141 +294,173 @@
 
                         </p>
 
-
-                        <div class="analysis-image">
-
-                            <img
-                                src="imagenes/imagn3.png"
-                                alt="MMDH vista escritorio"
-                                style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; object-fit: contain;"
-                            >
-
-                            <div class="caption">
-                                MMDH — vista de escritorio.
-                            </div>
-
-                        </div>
-
                     </div>
 
 
+                    <div class="analysis-image">
 
-                    <!-- =========================
-                        CELULAR
-                    ========================== -->
+                        <img
+                            src="imagenes/imagn3.png"
+                            alt="MMDH vista escritorio"
+                        >
 
-                    <div class="analysis-item">
+                        <p class="caption">
+                            MMDH — vista de escritorio.
+                        </p>
 
-                        <h4>
-                            ¿Cómo reacciona el layout cuando la pantalla se reduce al tamaño móvil?
-                        </h4>
+                    </div>
+
+                </article>
+
+
+
+                <!-- MÓVIL -->
+
+                <article class="analysis-item">
+
+                    <div class="numero-seccion">
+                        04
+                    </div>
+
+                    <div class="analysis-texto">
+
+                        <p class="etiqueta">
+                            RESPONSIVE
+                        </p>
+
+                        <h3>
+                            ¿Cómo reacciona el layout
+                            en formato móvil?
+                        </h3>
 
                         <p>
 
-                            Al reducir el ancho de la pantalla, los
-                            contenidos se reorganizan para adaptarse
-                            al espacio disponible. Las estructuras
-                            horizontales pueden pasar a una disposición
-                            vertical y los elementos de navegación
-                            ocupan menos espacio.
-
-                        </p>
-
-
-                        <div class="analysis-image">
-
-                            <img
-                                src="imagenes/imgn5.png"
-                                alt="MMDH vista móvil"
-                                style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; object-fit: contain;"
-                            >
-
-                            <div class="caption">
-                                MMDH — adaptación de la interfaz a formato móvil.
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- =========================
-                         EVALUACIÓN
-                    ========================== -->
-
-                    <div class="evaluation">
-
-                        <div class="evaluation-title">
-                            ¿Son apropiadas estas decisiones?
-                        </div>
-
-                        <p>
-
-                            La organización del sitio permite recorrer
-                            diferentes contenidos mediante una estructura
-                            de secciones. La adaptación a diferentes
-                            tamaños de pantalla permite mantener la
-                            jerarquía general de la información.
-
-                        </p>
-
-                        <p style="margin-top: 15px;">
-
-                            Como posible ajuste, se podría revisar la
-                            cantidad de información visible simultáneamente
-                            en algunas secciones para facilitar la lectura
-                            y navegación en pantallas pequeñas.
+                            Al reducir el ancho de la pantalla,
+                            los contenidos se reorganizan para
+                            adaptarse al espacio disponible.
+                            Las estructuras horizontales pueden
+                            pasar a una disposición vertical y
+                            los elementos de navegación ocupan
+                            menos espacio.
 
                         </p>
 
                     </div>
 
 
-                </div>
+                    <div class="analysis-image">
 
-            </article>
+                        <img
+                            src="imagenes/imgn5.png"
+                            alt="MMDH vista móvil"
+                        >
+
+                        <p class="caption">
+                            MMDH — adaptación de la interfaz a formato móvil.
+                        </p>
+
+                    </div>
+
+                </article>
 
 
 
-            <!-- ==================================================
-                 YOUTUBE
-            =================================================== -->
+                <!-- EVALUACIÓN -->
 
-            <article class="web-card" id="youtube">
+                <div class="evaluation">
 
-
-                <div class="web-header">
+                    <p class="etiqueta">
+                        EVALUACIÓN
+                    </p>
 
                     <h3>
-                        02 / YouTube
+                        ¿Son apropiadas estas decisiones?
                     </h3>
 
-                    <a
-                        class="visit"
-                        href="https://www.youtube.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        VISITAR PLATAFORMA ↗
-                    </a>
+                    <p>
+
+                        La organización del sitio permite recorrer
+                        diferentes contenidos mediante una estructura
+                        de secciones. La adaptación a diferentes
+                        tamaños de pantalla permite mantener la
+                        jerarquía general de la información.
+
+                    </p>
+
+                    <p>
+
+                        Como posible ajuste, se podría revisar la
+                        cantidad de información visible simultáneamente
+                        en algunas secciones para facilitar la lectura
+                        y navegación en pantallas pequeñas.
+
+                    </p>
 
                 </div>
 
 
-                <div class="web-content">
+            </div>
+
+        </section>
 
 
 
-                    <!-- =========================
-                         SCROLL
-                    ========================== -->
+        <!-- ==================================================
+             YOUTUBE
+        =================================================== -->
 
-                    <div class="analysis-item">
+        <section class="analisis-seccion youtube" id="youtube">
 
-                        <h4>
-                            ¿Qué partes de la pantalla se mueven y cuáles quedan fijas al hacer scroll?
-                        </h4>
+
+            <div class="sitio-titulo">
+
+                <div>
+
+                    <p class="etiqueta">
+                        02 / PLATAFORMA
+                    </p>
+
+                    <h2>
+                        <em>YouTube.</em>
+                    </h2>
+
+                </div>
+
+
+                <a
+                    class="boton"
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Visitar plataforma ↗
+                </a>
+
+            </div>
+
+
+
+            <div class="contenido-web">
+
+
+                <!-- SCROLL -->
+
+                <article class="analysis-item">
+
+                    <div class="numero-seccion">
+                        01
+                    </div>
+
+                    <div class="analysis-texto">
+
+                        <p class="etiqueta">
+                            SCROLL
+                        </p>
+
+                        <h3>
+                            ¿Qué partes de la pantalla se mueven
+                            y cuáles quedan fijas?
+                        </h3>
 
                         <p>
 
@@ -708,38 +469,49 @@
                             permitiendo explorar una gran cantidad
                             de contenidos. Algunos elementos de
                             navegación permanecen visibles durante
-                            el recorrido, como preferencias, filtros, busqueda, suscripciones, entre otros.
+                            el recorrido, como preferencias, filtros,
+                            búsqueda y suscripciones, entre otros.
 
                         </p>
-
-
-                        <div class="analysis-image">
-
-                            <img
-                                src="imagenes/yt2.png"
-                                alt="YouTube comportamiento durante el scroll"
-                                style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; object-fit: contain;"
-                            >
-
-                            <div class="caption">
-                                YouTube — comportamiento de la interfaz durante el scroll.
-                            </div>
-
-                        </div>
 
                     </div>
 
 
+                    <div class="analysis-image">
 
-                    <!-- =========================
-                         COLUMNAS
-                    ========================== -->
+                        <img
+                            src="imagenes/yt2.png"
+                            alt="YouTube comportamiento durante el scroll"
+                        >
 
-                    <div class="analysis-item">
+                        <p class="caption">
+                            YouTube — comportamiento de la interfaz durante el scroll.
+                        </p>
 
-                        <h4>
-                            ¿Cómo se distribuyen las columnas?
-                        </h4>
+                    </div>
+
+                </article>
+
+
+
+                <!-- COLUMNAS -->
+
+                <article class="analysis-item">
+
+                    <div class="numero-seccion">
+                        02
+                    </div>
+
+                    <div class="analysis-texto">
+
+                        <p class="etiqueta">
+                            ESTRUCTURA
+                        </p>
+
+                        <h3>
+                            ¿Cómo se distribuyen
+                            las columnas?
+                        </h3>
 
                         <p>
 
@@ -751,34 +523,43 @@
 
                         </p>
 
-
-                        <div class="analysis-item">
-
-                            <img
-                                src="imagenes/yt1.png"
-                                alt="YouTube análisis de columnas en DevTools"
-                                style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; object-fit: contain;"
-                            >
-
-                            <div class="caption">
-                                YouTube — análisis de columnas.
-                            </div>
-
-                        </div>
-
                     </div>
 
 
+                    <div class="analysis-image">
 
-                    <!-- =========================
-                         ESCRITORIO
-                    ========================== -->
+                        <img
+                            src="imagenes/yt1.png"
+                            alt="YouTube análisis de columnas en DevTools"
+                        >
 
-                    <div class="analysis-item">
+                        <p class="caption">
+                            YouTube — análisis de columnas.
+                        </p>
 
-                        <h4>
-                            Vista en escritorio
-                        </h4>
+                    </div>
+
+                </article>
+
+
+
+                <!-- ESCRITORIO -->
+
+                <article class="analysis-item">
+
+                    <div class="numero-seccion">
+                        03
+                    </div>
+
+                    <div class="analysis-texto">
+
+                        <p class="etiqueta">
+                            ESCRITORIO
+                        </p>
+
+                        <h3>
+                            Vista en escritorio.
+                        </h3>
 
                         <p>
 
@@ -790,34 +571,44 @@
 
                         </p>
 
-
-                        <div class="analysis-item">
-
-                            <img
-                                src="imagenes/yt3.png"
-                                alt="YouTube vista escritorio"
-                                style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; object-fit: contain;"
-                            >
-
-                            <div class="caption">
-                                YouTube — vista de escritorio.
-                            </div>
-
-                        </div>
-
                     </div>
 
 
+                    <div class="analysis-image">
 
-                    <!-- =========================
-                         MÓVIL
-                    ========================== -->
+                        <img
+                            src="imagenes/yt3.png"
+                            alt="YouTube vista escritorio"
+                        >
 
-                    <div class="analysis-item">
+                        <p class="caption">
+                            YouTube — vista de escritorio.
+                        </p>
 
-                        <h4>
-                            ¿Cómo reacciona el layout cuando la pantalla se reduce al tamaño móvil?
-                        </h4>
+                    </div>
+
+                </article>
+
+
+
+                <!-- MÓVIL -->
+
+                <article class="analysis-item">
+
+                    <div class="numero-seccion">
+                        04
+                    </div>
+
+                    <div class="analysis-texto">
+
+                        <p class="etiqueta">
+                            RESPONSIVE
+                        </p>
+
+                        <h3>
+                            ¿Cómo reacciona el layout
+                            en formato móvil?
+                        </h3>
 
                         <p>
 
@@ -830,63 +621,68 @@
 
                         </p>
 
-
-                        <div class="analysis-image">
-
-                            <img
-                                src="imagenes/yt4.png"
-                                alt="YouTube vista móvil"
-                                style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; object-fit: contain;"
-                            >
-
-                            <div class="caption">
-                                YouTube — adaptación de la interfaz a formato móvil.
-                            </div>
-
-                        </div>
-
                     </div>
 
 
+                    <div class="analysis-image">
 
-                    <!-- =========================
-                         EVALUACIÓN
-                    ========================== -->
+                        <img
+                            src="imagenes/yt4.png"
+                            alt="YouTube vista móvil"
+                        >
 
-                    <div class="evaluation">
-
-                        <div class="evaluation-title">
-                            ¿Son apropiadas estas decisiones?
-                        </div>
-
-                        <p>
-
-                            La estructura de YouTube está pensada para
-                            presentar una gran cantidad de contenidos
-                            manteniendo una navegación constante.
-                            La utilización de una rejilla permite
-                            aprovechar el espacio disponible y modificar
-                            la cantidad de columnas según el tamaño
-                            de la pantalla.
-
-                        </p>
-
-                        <p style="margin-top: 15px;">
-
-                            Como posible ajuste, se podría revisar la
-                            cantidad de elementos que aparecen
-                            simultáneamente para reducir la saturación
-                            visual en determinadas vistas.
-
+                        <p class="caption">
+                            YouTube — adaptación de la interfaz a formato móvil.
                         </p>
 
                     </div>
 
+                </article>
+
+
+
+                <!-- EVALUACIÓN -->
+
+                <div class="evaluation">
+
+                    <p class="etiqueta">
+                        EVALUACIÓN
+                    </p>
+
+                    <h3>
+                        ¿Son apropiadas estas decisiones?
+                    </h3>
+
+                    <p>
+
+                        La estructura de YouTube está pensada para
+                        presentar una gran cantidad de contenidos
+                        manteniendo una navegación constante.
+                        La utilización de una rejilla permite
+                        aprovechar el espacio disponible y modificar
+                        la cantidad de columnas según el tamaño
+                        de la pantalla.
+
+                    </p>
+
+                    <p>
+
+                        Como posible ajuste, se podría revisar la
+                        cantidad de elementos que aparecen
+                        simultáneamente para reducir la saturación
+                        visual en determinadas vistas.
+
+                    </p>
 
                 </div>
 
-            </article>
 
+            </div>
+
+        </section>
+
+
+    </main>
 
 </body>
 
